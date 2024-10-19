@@ -35,9 +35,8 @@ public class Main {
         int people = 12_000_000;
         int birthRate = 17;
         int mortality = 8;
-        int diffPeople = people / 1000;
         for (int year = 1; year <= 10; year++) {
-            people = diffPeople * (birthRate - mortality) + people;
+            people += people * birthRate / 1000 - people * mortality / 1000;
             System.out.println("Год " + year + ", численность населения составляет " + people);
         }
 
@@ -100,8 +99,8 @@ public class Main {
 
         int yearBefore = 2024 - 200;
         int yearAfter = 2024 + 100;
-        for (int y = 0; y < yearAfter; y = y + 79){
-           if (y>yearBefore){
+        for (int y = 0; y < yearAfter; y = y + 79) {
+            if (y > yearBefore) {
                 System.out.println(y);
             }
         }
